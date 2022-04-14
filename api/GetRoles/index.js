@@ -7,7 +7,10 @@ const roleGroupMappings = {
 };
 
 module.exports = async function (context, req) {
+    context.log('JavaScript HTTP trigger function processed a request.');
     const user = req.body || {};
+    context.log(req);
+    context.log(req.body);
     const roles = [];
     
     for (const [role, groupId] of Object.entries(roleGroupMappings)) {
